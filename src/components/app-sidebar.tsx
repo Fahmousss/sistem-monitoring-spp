@@ -1,19 +1,15 @@
-"use client";
-
 import {
-  BadgeDollarSign,
   Banknote,
   Calendar,
   ChevronDown,
   ChevronUp,
-  DollarSign,
+  GraduationCap,
   Home,
   Inbox,
   LayoutDashboard,
   Search,
   Settings,
   User2,
-  Users,
 } from "lucide-react";
 
 import {
@@ -35,8 +31,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
-import { useState } from "react";
-import { dataFakultas, Fakultas } from "@/lib/dummy";
 
 // Menu items.
 const items = [
@@ -48,7 +42,7 @@ const items = [
   {
     title: "Mahasiswa",
     url: "#",
-    icon: Users,
+    icon: GraduationCap,
   },
   {
     title: "UKT",
@@ -58,42 +52,16 @@ const items = [
 ];
 
 export function AppSidebar() {
-  const [selectedFakultas, setSelectedFakultas] = useState<Fakultas | null>(
-    null
-  );
-
   return (
     <Sidebar variant="sidebar">
       <SidebarHeader>
         <div className="m-2">
           <Image src="/image/logo.webp" alt="logo" width={70} height={70} />
         </div>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <SidebarMenuButton>
-                  {selectedFakultas ? selectedFakultas.nama : "Pilih Fakultas"}
-                  <ChevronDown className="ml-auto" />
-                </SidebarMenuButton>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
-                {dataFakultas.map((fakultas) => (
-                  <DropdownMenuItem
-                    key={fakultas.id}
-                    onClick={() => setSelectedFakultas(fakultas)}
-                  >
-                    {fakultas.nama}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </SidebarMenuItem>
-        </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>{selectedFakultas?.nama || ""}</SidebarGroupLabel>
+          <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
