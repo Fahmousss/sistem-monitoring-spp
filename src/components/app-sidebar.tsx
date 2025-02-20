@@ -1,14 +1,8 @@
 import {
   Banknote,
-  Calendar,
-  ChevronDown,
   ChevronUp,
   GraduationCap,
-  Home,
-  Inbox,
   LayoutDashboard,
-  Search,
-  Settings,
   User2,
 } from "lucide-react";
 
@@ -18,7 +12,6 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -61,7 +54,6 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
